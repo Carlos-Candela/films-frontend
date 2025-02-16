@@ -1,0 +1,12 @@
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: films-frontend
+    volumes:
+      - ./app:/var/www/html/app
+      - ./config/dev/virtualhosts/apache-dev.com.conf:/etc/apache2/sites-enabled/apache-dev.com.conf
+      - ./config/dev/virtualhosts/urls.js:/var/www/html/app/public_html/config/urls.js
+    ports:
+      - "8081:80"

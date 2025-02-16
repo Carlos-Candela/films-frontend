@@ -1,0 +1,10 @@
+services:
+  app:
+    build: . 
+    container_name: films-frontend
+    volumes:
+      - ./app:/var/www/html/app
+      - ./config/prod/virtualhosts/filmsccs.chickenkiller.com.conf:/etc/apache2/sites-enabled/filmsccs.chickenkiller.com.conf
+      - ./config/prod/virtualhosts/urls.js:/var/www/html/app/public_html/config/urls.js
+    ports:
+      - "80:80"
