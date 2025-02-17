@@ -1,0 +1,7 @@
+Options -Indexes
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\.)?filmsccs.mooo.com$ [NC]
+RewriteRule ^(.*)$ https://filmsccs.chickenkiller.com/$1 [R=301,L]
+
+ErrorDocument 404 /error404.html
